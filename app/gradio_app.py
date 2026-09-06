@@ -360,6 +360,8 @@ with gr.Blocks() as demo:
     # will be displayed.
     answer = gr.Markdown(label="Answer")
 
+    
+
     # Display a preview of the embedding generated
     # from the user's question.
     query_embedding_preview = gr.Textbox(

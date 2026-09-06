@@ -15,10 +15,11 @@ PDF_PATH = DATA_DIR / "knowledge.pdf"
 CHUNK_SIZE = 500
 CHUNK_OVERLAP = 50
 
-EMBEDDING_MODEL_NAME = "all-MiniLM-L6-v2"
+EMBEDDING_MODEL_NAME = "gemini-embedding-2"
 
 TOP_K = 3
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GOOGLE_API_KEY=os.getenv("GEMINI_API_KEY")
 
 
 print("base directory" ,BASE_DIR)
