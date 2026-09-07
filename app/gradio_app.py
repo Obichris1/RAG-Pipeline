@@ -357,9 +357,13 @@ with gr.Blocks() as demo:
     # Create the button used to submit the question.
     ask_button = gr.Button("Ask")
 
+  # Explicit heading — gr.Markdown does NOT render its `label=`
+    # as a visible header, unlike Textbox/Dataframe, so we add one manually.
+    gr.Markdown("### 💬 Answer")
+
     # Create a Markdown component where the final LLM answer
-    # will be displayed.
-    answer = gr.Markdown(label="Answer")
+    # will be displayed (with formatting: bold, lists, etc.)
+    answer = gr.Markdown()
 
     
 
