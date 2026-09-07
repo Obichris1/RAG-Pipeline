@@ -407,10 +407,11 @@ with gr.Blocks() as demo:
 #
 # If the file is imported by another Python file,
 # this block will not execute.
+import os
+
 if __name__ == "__main__":
 
-    # Start the Gradio server.
-    #
-    # server_name="127.0.0.1"
-    # means the app is accessible locally on your computer.
-    demo.launch(server_name="127.0.0.1")
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=int(os.environ.get("PORT", 7860)),
+    )
