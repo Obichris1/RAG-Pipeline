@@ -4,6 +4,7 @@ import gradio as gr
 # Import Path so we can convert the uploaded file path
 # into a Python Path object.
 from pathlib import Path
+import os
 
 # Import our RAG engine, which handles:
 # PDF processing → chunking → embeddings → vector search → LLM answer.
@@ -407,11 +408,15 @@ with gr.Blocks() as demo:
 #
 # If the file is imported by another Python file,
 # this block will not execute.
-import os
+
+
+
 
 if __name__ == "__main__":
 
     demo.launch(
         server_name="0.0.0.0",
         server_port=int(os.environ.get("PORT", 7860)),
+        share=True,  # ← bypasses Gradio's failing local-reachability
+                     #   self-check on Render's sandboxed networking
     )
